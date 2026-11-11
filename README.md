@@ -67,11 +67,10 @@ Do protótipo no **Figma** à interface em **React**: dashboards por perfil de u
 
 ---
 
-## 📈 Estatísticas
+## 📈 Atividade
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=tamiresvferreira&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ff5fa2&icon_color=ff5fa2&text_color=c9d1d9&locale=pt-br" alt="Estatísticas do GitHub"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tamiresvferreira&layout=compact&hide_border=true&bg_color=0d1117&title_color=ff5fa2&text_color=c9d1d9&locale=pt-br" alt="Linguagens mais usadas"/>
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=tamiresvferreira&bg_color=0d1117&color=c9d1d9&title_color=ff5fa2&line=ff5fa2&point=ffc2e0&area=true&area_color=ff5fa2&hide_border=true&radius=8&custom_title=Atividade%20no%20GitHub" alt="Gráfico de atividade no GitHub"/>
 </p>
 
 <p align="center">
