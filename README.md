@@ -17,19 +17,12 @@ Trabalho o ciclo completo de um projeto de IA. Começo pela **coleta e análise 
 
 Também me importo com a parte que fica entre o código e as pessoas: documentação clara, arquitetura bem explicada e interfaces pensadas para quem vai usar.
 
-**Soft skills**
-
-- 🗣️ **Comunicação técnica:** explico modelos e resultados de um jeito claro, em READMEs, diagramas e apresentações
-- 🤝 **Trabalho em equipe:** experiência com entregas em sprints e projetos colaborativos
-- 🧭 **Visão de produto:** começo pelo problema e pelo usuário, não pela ferramenta
-- 🔍 **Atenção aos detalhes:** trabalho de forma iterativa, refinando até ficar certo
-- 📚 **Aprendizado contínuo:** estou sempre estudando algo novo, hoje com foco em visão computacional
-- 🌎 **Inglês avançado**
-
 <!-- ===================== KNOW MY SKILLS ===================== -->
 <p align="center">
   <img src="./assets/jupiter.svg" alt="Know my skills" width="100%"/>
 </p>
+
+## 💻 Hard skills
 
 ### 🧠 Machine Learning & IA
 Regressão, classificação e clusterização (K-Means, DBSCAN), XGBoost, validação cruzada, Grid Search e pipeline **CRISP-DM**. Também tenho experiência com scoring de risco e estou estudando visão computacional com **YOLO**.
@@ -58,6 +51,19 @@ Do protótipo no **Figma** à interface em **React**: dashboards por perfil de u
 **ESP32 e Arduino** com sensores e Wi-Fi, em protótipos de irrigação inteligente e de cidades inteligentes.
 
 <img src="https://skillicons.dev/icons?i=arduino,git,github,vscode&theme=dark" alt="Arduino, Git, GitHub, VS Code"/>
+
+## 🤝 Soft skills
+
+- ✍️ **Comunicação escrita:** textos claros e objetivos, de documentação técnica a relatórios para quem não é da área
+- 🗣️ **Comunicação técnica:** explico modelos e resultados de forma acessível, em READMEs, diagramas e apresentações
+- 📈 **Apresentação de dados para times:** transformo análises em insights que apoiam decisões
+- 🧑‍💼 **Vivência em ambiente corporativo:** conduzo reuniões, alinho expectativas com diferentes áreas e lido bem com prazos e prioridades
+- 🚀 **Liderança de projetos:** organizo entregas do planejamento à execução e coordeno pessoas em torno de um objetivo
+- 🤝 **Trabalho em equipe:** entregas em sprints e projetos colaborativos
+- 🧭 **Visão de produto:** começo pelo problema e pelo usuário, não pela ferramenta
+- 🔍 **Atenção aos detalhes:** trabalho de forma iterativa, refinando até ficar certo
+- 📚 **Aprendizado contínuo:** estou sempre estudando algo novo, hoje com foco em visão computacional
+- 🌎 **Inglês avançado**
 
 ---
 
