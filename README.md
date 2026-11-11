@@ -1,6 +1,6 @@
 <!-- ===================== BANNER ANIMADO ===================== -->
 <p align="center">
-  <img src="./assets/banner.svg" alt="Tamires — IA aplicada · Dados · Comunicação" width="100%"/>
+  <img src="./assets/banner.svg" alt="Hello world! My name is Tamires — Applied AI · Data · Machine Learning" width="100%"/>
 </p>
 
 <p align="center">
@@ -11,52 +11,81 @@
 
 ---
 
-## 👾 Oi, eu sou a Tamires!
+## 👾 Sobre mim
 
-Estudante de **Inteligência Artificial na FIAP**, construindo soluções com **IA aplicada, dados e interfaces**. Antes de chegar aqui, trabalhei com comunicação. Por isso gosto de projetos que, além de funcionar, sejam fáceis de entender e de usar.
+Estudante de **Inteligência Artificial na FIAP**. Construo soluções com **machine learning, dados e interfaces**, desde a análise exploratória até o modelo, o dashboard e o hardware que coleta os dados.
 
-- 🤖 **IA & Machine Learning**: modelos preditivos, clusterização, pipelines CRISP-DM
-- 📊 **Dados**: Python, SQL e dashboards em Power BI
-- 🎨 **Interface**: do protótipo no Figma ao front-end em React
-- 🔌 **Hardware**: projetos com ESP32 e Arduino
-- 📍 João Pessoa, Paraíba
+- 🏆 Participação no **NEXT FIAP**
+- 🌱 Experiência com **IA aplicada ao agronegócio e a cidades inteligentes**, a partir de dados abertos
+- 📍 João Pessoa, Paraíba, Brasil
 
 <!-- ===================== CENA ANIMADA ===================== -->
 <p align="center">
-  <img src="./assets/jupiter.svg" alt="Cursor em pixel clicando em Júpiter, uma referência ao Jupyter Notebook" width="100%"/>
+  <img src="./assets/jupiter.svg" alt="Cursor em pixel clicando em Júpiter: know my skills" width="100%"/>
 </p>
 
-## 🛠️ Ferramentas & Skills
+## 🧠 Machine Learning & IA
 
-**Dados & IA**
+- **Regressão:** comparação de modelos preditivos (ex.: previsão de rendimento de safra)
+- **Classificação:** pipeline completo com **CRISP-DM**, validação cruzada e ajuste de hiperparâmetros com **Grid Search**
+- **Clusterização:** K-Means e DBSCAN para segmentação e detecção de padrões
+- **Modelos:** Scikit-learn, XGBoost, regularização e pré-processamento de dados
+- **Visão computacional:** detecção de objetos com **YOLO** (em estudo)
+- **Scoring de risco:** índices calculados a partir de múltiplas fontes de dados
+
 <p>
-  <img src="https://skillicons.dev/icons?i=py,r,mysql,sklearn,opencv,aws&theme=dark" alt="Python, R, SQL, Scikit-learn, OpenCV, AWS"/>
-</p>
-<p>
-  <img src="https://img.shields.io/badge/Power_BI-0d1117?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
-  <img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://skillicons.dev/icons?i=py,sklearn,opencv&theme=dark" alt="Python, Scikit-learn, OpenCV"/>
   <img src="https://img.shields.io/badge/Jupyter-0d1117?style=for-the-badge&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
   <img src="https://img.shields.io/badge/Google_Colab-0d1117?style=for-the-badge&logo=googlecolab&logoColor=F9AB00" alt="Google Colab"/>
 </p>
 
-**Front-end & Design**
+## 📊 Dados
+
+- **Análise exploratória** e tratamento de dados com Python (Pandas)
+- **SQL** e modelagem de bancos relacionais
+- **Dashboards** em Power BI e em R (Shiny)
+- **Dados abertos via API:** INMET, EMBRAPA, ANA, INPE e BACEN
+
+<p>
+  <img src="https://skillicons.dev/icons?i=py,r,mysql&theme=dark" alt="Python, R, SQL"/>
+  <img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Power_BI-0d1117?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
+</p>
+
+## ☁️ Cloud
+
+- **AWS:** comparação de custos entre regiões para hospedar uma API de ML, considerando os requisitos legais de armazenamento de dados
+- Arquitetura **serverless** e diagramas de arquitetura de ponta a ponta
+
+<p>
+  <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
+</p>
+
+## 🎨 Front-end & Interface
+
+- Do protótipo no **Figma** à interface em **React**
+- Dashboards com visões diferentes por perfil de usuário e **autenticação** por perfil
+- Fluxos que funcionam **offline**
+
 <p>
   <img src="https://skillicons.dev/icons?i=figma,react,js,html,css&theme=dark" alt="Figma, React, JavaScript, HTML, CSS"/>
 </p>
 
-**Hardware & Ferramentas**
+## 🔌 IoT & Hardware
+
+- **ESP32 e Arduino** com sensores e conexão Wi-Fi
+- Monitor serial, controle de tempo com `millis()` e coleta de dados de sensores
+- Protótipos e maquetes para irrigação inteligente e cidades inteligentes
+
 <p>
-  <img src="https://skillicons.dev/icons?i=arduino,git,github,vscode,md&theme=dark" alt="Arduino/ESP32, Git, GitHub, VS Code, Markdown"/>
+  <img src="https://skillicons.dev/icons?i=arduino&theme=dark" alt="Arduino/ESP32"/>
 </p>
 
-## 🚀 Projetos em destaque
+## 🧰 Ferramentas
 
-<!-- Troque pelos seus repositórios conforme for publicando -->
-| Projeto | O que faz | Stack |
-|---|---|---|
-| 🚧 **Analisador de Textos com IA** | Classifica sentimento e legibilidade de textos em PT-BR e sugere melhorias com LLM | Python · NLP · LLM · Streamlit |
-| 🚧 **Dados Abertos da Paraíba** | Dashboard com dados públicos de João Pessoa e região | Power BI · Python |
-| 🚧 **SQL na prática** | Modelagem de banco + consultas comentadas, do básico a window functions | SQL |
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,md&theme=dark" alt="Git, GitHub, VS Code, Markdown"/>
+</p>
 
 ## 📈 Estatísticas
 
