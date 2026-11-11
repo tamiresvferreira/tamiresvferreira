@@ -1,6 +1,6 @@
 <!-- ===================== BANNER ANIMADO ===================== -->
 <p align="center">
-  <img src="./assets/banner.svg" alt="Hello world! My name is Tamires — Applied AI · Data · Machine Learning" width="100%"/>
+  <img src="./assets/banner.svg" alt="Hello world! My name is Tamires" width="100%"/>
 </p>
 
 <p align="center">
@@ -9,83 +9,57 @@
   <img src="https://komarev.com/ghpvc/?username=tamiresvferreira&label=visitas&color=ff5fa2&style=for-the-badge" alt="Visitas ao perfil"/>
 </p>
 
----
-
 ## 👾 Sobre mim
 
-Estudante de **Inteligência Artificial na FIAP**. Construo soluções com **machine learning, dados e interfaces**, desde a análise exploratória até o modelo, o dashboard e o hardware que coleta os dados.
+Sou estudante de **Inteligência Artificial na FIAP** e gosto de transformar dados em soluções que as pessoas conseguem usar no dia a dia.
 
-- 🏆 Participação no **NEXT FIAP**
-- 🌱 Experiência com **IA aplicada ao agronegócio e a cidades inteligentes**, a partir de dados abertos
-- 📍 João Pessoa, Paraíba, Brasil
+Trabalho o ciclo completo de um projeto de IA. Começo pela **coleta e análise dos dados**, passo pelo **modelo de machine learning** e termino na **interface** que mostra o resultado, às vezes também no **hardware** que captura as informações. Já apliquei isso em problemas reais de **agronegócio** e de **cidades inteligentes**, usando dados abertos e públicos.
 
-<!-- ===================== CENA ANIMADA ===================== -->
+Também me importo com a parte que fica entre o código e as pessoas: documentação clara, arquitetura bem explicada e interfaces pensadas para quem vai usar.
+
+**Soft skills**
+
+- 🗣️ **Comunicação técnica:** explico modelos e resultados de um jeito claro, em READMEs, diagramas e apresentações
+- 🤝 **Trabalho em equipe:** experiência com entregas em sprints e projetos colaborativos
+- 🧭 **Visão de produto:** começo pelo problema e pelo usuário, não pela ferramenta
+- 🔍 **Atenção aos detalhes:** trabalho de forma iterativa, refinando até ficar certo
+- 📚 **Aprendizado contínuo:** estou sempre estudando algo novo, hoje com foco em visão computacional
+- 🌎 **Inglês avançado**
+
+<!-- ===================== KNOW MY SKILLS ===================== -->
 <p align="center">
-  <img src="./assets/jupiter.svg" alt="Cursor em pixel clicando em Júpiter: know my skills" width="100%"/>
+  <img src="./assets/jupiter.svg" alt="Know my skills" width="100%"/>
 </p>
 
-## 🧠 Machine Learning & IA
+### 🧠 Machine Learning & IA
+Regressão, classificação e clusterização (K-Means, DBSCAN), XGBoost, validação cruzada, Grid Search e pipeline **CRISP-DM**. Também tenho experiência com scoring de risco e estou estudando visão computacional com **YOLO**.
 
-- **Regressão:** comparação de modelos preditivos (ex.: previsão de rendimento de safra)
-- **Classificação:** pipeline completo com **CRISP-DM**, validação cruzada e ajuste de hiperparâmetros com **Grid Search**
-- **Clusterização:** K-Means e DBSCAN para segmentação e detecção de padrões
-- **Modelos:** Scikit-learn, XGBoost, regularização e pré-processamento de dados
-- **Visão computacional:** detecção de objetos com **YOLO** (em estudo)
-- **Scoring de risco:** índices calculados a partir de múltiplas fontes de dados
+<img src="https://skillicons.dev/icons?i=py,sklearn,opencv&theme=dark" alt="Python, Scikit-learn, OpenCV"/>
 
-<p>
-  <img src="https://skillicons.dev/icons?i=py,sklearn,opencv&theme=dark" alt="Python, Scikit-learn, OpenCV"/>
-  <img src="https://img.shields.io/badge/Jupyter-0d1117?style=for-the-badge&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
-  <img src="https://img.shields.io/badge/Google_Colab-0d1117?style=for-the-badge&logo=googlecolab&logoColor=F9AB00" alt="Google Colab"/>
-</p>
+### 📊 Dados
+Análise exploratória com Pandas, **SQL** e modelagem relacional, dashboards em **Power BI** e **R Shiny**, e consumo de APIs de dados abertos (INMET, EMBRAPA, ANA, INPE, BACEN).
 
-## 📊 Dados
+<img src="https://skillicons.dev/icons?i=r,mysql&theme=dark" alt="R, SQL"/>
+<img src="https://img.shields.io/badge/Power_BI-0d1117?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
+<img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+<img src="https://img.shields.io/badge/Jupyter-0d1117?style=for-the-badge&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
 
-- **Análise exploratória** e tratamento de dados com Python (Pandas)
-- **SQL** e modelagem de bancos relacionais
-- **Dashboards** em Power BI e em R (Shiny)
-- **Dados abertos via API:** INMET, EMBRAPA, ANA, INPE e BACEN
+### ☁️ Cloud
+**AWS**: análise de custos entre regiões para hospedar uma API de ML, considerando os requisitos legais de armazenamento de dados. Também trabalho com arquitetura serverless.
 
-<p>
-  <img src="https://skillicons.dev/icons?i=py,r,mysql&theme=dark" alt="Python, R, SQL"/>
-  <img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
-  <img src="https://img.shields.io/badge/Power_BI-0d1117?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
-</p>
+<img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
 
-## ☁️ Cloud
+### 🎨 Front-end & Design
+Do protótipo no **Figma** à interface em **React**: dashboards por perfil de usuário, autenticação e fluxos offline.
 
-- **AWS:** comparação de custos entre regiões para hospedar uma API de ML, considerando os requisitos legais de armazenamento de dados
-- Arquitetura **serverless** e diagramas de arquitetura de ponta a ponta
+<img src="https://skillicons.dev/icons?i=figma,react,js,html,css&theme=dark" alt="Figma, React, JavaScript, HTML, CSS"/>
 
-<p>
-  <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
-</p>
+### 🔌 IoT & Hardware
+**ESP32 e Arduino** com sensores e Wi-Fi, em protótipos de irrigação inteligente e de cidades inteligentes.
 
-## 🎨 Front-end & Interface
+<img src="https://skillicons.dev/icons?i=arduino,git,github,vscode&theme=dark" alt="Arduino, Git, GitHub, VS Code"/>
 
-- Do protótipo no **Figma** à interface em **React**
-- Dashboards com visões diferentes por perfil de usuário e **autenticação** por perfil
-- Fluxos que funcionam **offline**
-
-<p>
-  <img src="https://skillicons.dev/icons?i=figma,react,js,html,css&theme=dark" alt="Figma, React, JavaScript, HTML, CSS"/>
-</p>
-
-## 🔌 IoT & Hardware
-
-- **ESP32 e Arduino** com sensores e conexão Wi-Fi
-- Monitor serial, controle de tempo com `millis()` e coleta de dados de sensores
-- Protótipos e maquetes para irrigação inteligente e cidades inteligentes
-
-<p>
-  <img src="https://skillicons.dev/icons?i=arduino&theme=dark" alt="Arduino/ESP32"/>
-</p>
-
-## 🧰 Ferramentas
-
-<p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,md&theme=dark" alt="Git, GitHub, VS Code, Markdown"/>
-</p>
+---
 
 ## 📈 Estatísticas
 
@@ -98,16 +72,12 @@ Estudante de **Inteligência Artificial na FIAP**. Construo soluções com **mac
   <img src="https://streak-stats.demolab.com?user=tamiresvferreira&hide_border=true&background=0d1117&ring=ff5fa2&fire=ff5fa2&currStreakLabel=ff5fa2&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&stroke=30363d&locale=pt_br" alt="Sequência de contribuições"/>
 </p>
 
-## 🐍 Minhas contribuições
-
 <!-- Gerado automaticamente pelo workflow .github/workflows/snake.yml -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/github-contribution-grid-snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/github-contribution-grid-snake.svg"/>
   <img alt="Cobrinha comendo o gráfico de contribuições" src="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/github-contribution-grid-snake-dark.svg"/>
 </picture>
-
----
 
 <p align="center">
   <sub>Feito em pixel, um quadradinho de cada vez 🩷</sub>
