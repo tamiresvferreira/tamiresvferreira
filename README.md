@@ -37,6 +37,12 @@ Análise exploratória com Pandas, **SQL** e modelagem relacional, dashboards em
 <img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
 <img src="https://img.shields.io/badge/Jupyter-0d1117?style=for-the-badge&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
 
+### ⚙️ Automação
+Expertise na criação de **automações avançadas no n8n**, integrando sistemas por APIs e webhooks, com fluxos de várias etapas e lógica condicional. Conhecimento avançado em plataformas de automação de atendimento, como a **BotConversa**.
+
+<img src="https://img.shields.io/badge/n8n-0d1117?style=for-the-badge&logo=n8n&logoColor=EA4B71" alt="n8n"/>
+<img src="https://img.shields.io/badge/BotConversa-0d1117?style=for-the-badge&logo=whatsapp&logoColor=25D366" alt="BotConversa"/>
+
 ### ☁️ Cloud
 **AWS**: análise de custos entre regiões para hospedar uma API de ML, considerando os requisitos legais de armazenamento de dados. Também trabalho com arquitetura serverless.
 
