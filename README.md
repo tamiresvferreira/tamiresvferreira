@@ -1,6 +1,6 @@
 <!-- ===================== BANNER ANIMADO ===================== -->
 <p align="center">
-  <img src="./assets/banner.svg" alt="Hello world! My name is Tamires" width="100%"/>
+  <img src="./assets/banner.svg" alt="Hello world! I am Tamires" width="100%"/>
 </p>
 
 <p align="center">
