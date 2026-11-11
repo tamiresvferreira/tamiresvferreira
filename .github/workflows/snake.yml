@@ -1,4 +1,4 @@
-name: Gerar cobrinha das contribuições
+name: Gerar cobrinha das contribuições e cards do README
 
 on:
   schedule:
@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
       - name: Gerar SVGs da cobrinha
         uses: Platane/snk/svg-only@v3
         with:
@@ -22,6 +25,13 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg?color_snake=#ff5fa2&color_dots=#ebedf0,#ffd6ea,#ffa3cf,#ff5fa2,#c2185b
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#ff5fa2&color_dots=#161b22,#4a1838,#8a2560,#c9367f,#ff5fa2
+
+      - name: Gerar cards de atividade e linguagens
+        run: python .github/scripts/cards.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          OUT_DIR: dist
 
       - name: Publicar na branch output
         uses: crazy-max/ghaction-github-pages@v4
