@@ -74,7 +74,8 @@ Do protótipo no **Figma** à interface em **React**: dashboards por perfil de u
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=tamiresvferreira&hide_border=true&background=0d1117&ring=ff5fa2&fire=ff5fa2&currStreakLabel=ff5fa2&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&stroke=30363d&locale=pt_br" alt="Sequência de contribuições"/>
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tamiresvferreira&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=ff5fa2&text_color=c9d1d9&locale=pt-br&custom_title=Linguagens%20que%20mais%20uso" alt="Linguagens que mais uso"/>
+  <img height="170" src="https://streak-stats.demolab.com?user=tamiresvferreira&hide_border=true&background=0d1117&ring=ff5fa2&fire=ff5fa2&currStreakLabel=ff5fa2&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&stroke=30363d&locale=pt_br" alt="Sequência de contribuições"/>
 </p>
 
 <!-- Gerado automaticamente pelo workflow .github/workflows/snake.yml -->
