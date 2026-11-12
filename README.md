@@ -36,6 +36,7 @@ Análise exploratória com Pandas, **SQL** e modelagem relacional, dashboards em
 <img src="https://img.shields.io/badge/Power_BI-0d1117?style=for-the-badge&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
 <img src="https://img.shields.io/badge/Pandas-0d1117?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
 <img src="https://img.shields.io/badge/Jupyter-0d1117?style=for-the-badge&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
+<img src="https://img.shields.io/badge/Google_Colab-0d1117?style=for-the-badge&logo=googlecolab&logoColor=F9AB00" alt="Google Colab"/>
 
 ### ⚙️ Automação
 Expertise na criação de **automações avançadas no n8n**, integrando sistemas por APIs e webhooks, com fluxos de várias etapas e lógica condicional. Conhecimento avançado em plataformas de automação de atendimento, como a **BotConversa**.
