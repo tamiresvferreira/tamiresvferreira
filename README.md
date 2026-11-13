@@ -19,7 +19,7 @@
 
 Sou estudante de **Inteligência Artificial na FIAP** e gosto de transformar dados em soluções que as pessoas conseguem usar no dia a dia.
 
-Trabalho o ciclo completo de um projeto de IA. Começo pela **coleta e análise dos dados**, passo pelo **modelo de machine learning** e termino na **interface** que mostra o resultado, às vezes também no **hardware** que captura as informações. Já apliquei isso em problemas reais de **agronegócio** e de **cidades inteligentes**, usando dados abertos e públicos.
+Trabalho o ciclo completo de um projeto de IA. Começo pela **coleta e análise dos dados**, passo pelo **modelo de machine learning** e termino na **interface** que mostra o resultado, às vezes também no **hardware** que captura as informações. Já apliquei isso em problemas reais de **agronegócio**, **cidades inteligentes** e **prevenção de desastres climáticos**, usando dados abertos e públicos e também **dados espaciais**: imagens de satélite de radar (Sentinel-1) e mapas georreferenciados para prever enchentes e deslizamentos.
 
 Também me importo com a parte que fica entre o código e as pessoas: documentação clara, arquitetura bem explicada e interfaces pensadas para quem vai usar.
 
@@ -42,10 +42,16 @@ Também me importo com a parte que fica entre o código e as pessoas: documenta�
 <img src="./assets/icons/botconversa.svg" height="48" alt="BotConversa"/>
 
 **🧩 Prototipagem (interface e hardware)**<br>
-<img src="https://skillicons.dev/icons?i=figma,react,js,html,css,arduino&perline=5&theme=dark" alt="Figma, React, JavaScript, HTML, CSS, Arduino"/>
+<img src="https://skillicons.dev/icons?i=figma,react,js,html,css,arduino&theme=dark" alt="Figma, React, JavaScript, HTML, CSS, Arduino"/>
 
 **🛠️ Desenvolvimento & Deploy**<br>
 <img src="https://skillicons.dev/icons?i=git,github,vscode,aws&theme=dark" alt="Git, GitHub, VS Code, AWS"/>
+
+**🪄 Prompt Engineering**<br>
+<img src="./assets/icons/claude.svg" height="48" alt="Claude"/>
+<img src="./assets/icons/codex.svg" height="48" alt="Codex"/>
+<img src="./assets/icons/gemini.svg" height="48" alt="Gemini"/>
+<img src="./assets/icons/grok.svg" height="48" alt="Grok"/>
 
 </td>
 </tr>
