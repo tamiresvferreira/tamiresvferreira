@@ -164,7 +164,7 @@ CSS = """
 .breath{transform-box:fill-box;transform-origin:bottom;animation:breath 3s ease-in-out infinite}
 @keyframes breath{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.05)}}
 .z{opacity:0;animation:z 3.6s ease-out infinite}
-@keyframes z{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(14px,-26px)}}
+@keyframes z{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(12px,-14px)}}
 .float{animation:float 5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .spin{transform-box:fill-box;transform-origin:center;animation:spin 3.4s ease-in-out infinite}
@@ -327,130 +327,148 @@ def line_cells(g, x0, y0, x1, y1, col, thick=3):
             g.set(x + dx - thick // 2, y, col)
 
 
-# ---------------------------------------------------------------- avatar
-HAIR, HAIR_S, HAIR_L = "#f2cf78", "#d3a24a", "#fff1bd"
-SKIN, SKIN_S = "#ffdcc8", "#f0b49a"
-PH, PH_S = "#ff7ab8", "#c2386f"
-TOP, TOP_S = "#b83a7c", "#86285a"
-JEANS, JEANS_S = "#3b3656", "#2a2642"
-LAP, LAP_S = "#ffa8d6", "#d95f9b"
-LASH, IRIS, IRIS_L, PUPIL = "#3a1f2c", "#8a5236", "#c4865a", "#2b1626"
+# ---------------------------------------------------------------- avatar (sprite do primeiro banner, retrô)
+# Mapa de pixels da bonequinha original; o cabelo virou loiro e o fone ficou todo rosa.
+DOLL = [
+    "......aaaaaaaaaa......",
+    "....aabaaaaaaaabaa....",
+    "...abaacddddddcaaba...",
+    "..aeacddffffffddcaba..",
+    "..aaccccccccccccccaa..",
+    ".abaccghhiiiihhgccaba.",
+    ".aaccghejbeeeebhgccaa.",
+    ".aacghkeaabekeeehgcaa.",
+    ".aacghkallabekkehgcaa.",
+    "amacghealllaabekhgcama",
+    "amggheallllllaabehggma",
+    "amgmhannnllllnnaahmgma",
+    "aoomhllllllllllllhmooa",
+    "ammghlaaallllaaalhgmma",
+    "aggghpqaallllaaqphggga",
+    ".agghlrssllllssrlhgga.",
+    ".aaaattllllllllttaaaa.",
+    "aejbapllllllllllpabjea",
+    "akbjacpllllllllpcajbka",
+    "akbjaicuunnnnuuciajbka",
+    "aeejaicddvwwvdqciajeea",
+    "abebaicdddvvdxdciabeba",
+    ".abeaycddvwwvddcyaeba.",
+    ".aajbaicdvwwvdciabjaa.",
+    ".alaaicdivwwvidciaala.",
+    ".alnidccccvvccccdinla.",
+    "..aaidcfdcddcfdcdiaa..",
+    "....aidffcfdcffdia....",
+    ".....aiicdffdciia.....",
+    ".....aqyqaaaaqyqa.....",
+    "....azzxqa..aqxzza....",
+    "....axxqaa..aaqxxa....",
+    ".....aaa......aaa.....",
+]
+DOLL_COLS = {
+    "a": "#222034",
+    # cabelo loiro
+    "j": "#b8862f", "b": "#d9a94a", "e": "#f2cf78", "k": "#fff1bd", "p": "#e0b060",
+    # fone rosa (antes cinza)
+    "g": "#c2386f", "h": "#9c2a5a", "m": "#e0559a", "o": "#ff8cc6",
+    # roupa rosa, gravata vermelha, pele, olhos, sapatos
+    "c": "#f76898", "d": "#fd94b9", "f": "#ffb7d0", "i": "#ea2d7f",
+    "v": "#9c1012", "w": "#c71306",
+    "l": "#fddab5", "n": "#f9bf95", "t": "#fb9d7c", "u": "#d8885c",
+    "r": "#fffefd", "s": "#663931",
+    "q": "#c8c2d1", "x": "#ece9f0", "y": "#9193a6", "z": "#ffffff",
+}
+doll = Grid(len(DOLL[0]), len(DOLL))
+for y, row in enumerate(DOLL):
+    for x, v in enumerate(row):
+        if v in DOLL_COLS:
+            doll.set(x, y, DOLL_COLS[v])
 
-av = Grid(42, 48)
-# cabelo de trás (comprido e ondulado)
-av.ellipse(21, 14, 12, 12, HAIR)
-for y in range(14, 37):
-    wv = round(math.sin(y / 2.2))
-    av.rect(8 + wv, y, 13 + wv, y, HAIR)
-    av.rect(29 - wv, y, 34 - wv, y, HAIR)
-    av.set(9 + wv, y, HAIR_S); av.set(33 - wv, y, HAIR_S)
-# pernas cruzadas
-av.ellipse(21, 41, 16, 4.6, JEANS)
-av.rect(6, 44, 36, 44, None)
-for x in range(7, 36):
-    if av.get(x, 43):
-        av.set(x, 43, JEANS_S)
-# tênis
-av.rect(3, 39, 7, 42, "#f4eef4"); av.rect(3, 42, 7, 42, PH)
-av.rect(35, 39, 39, 42, "#f4eef4"); av.rect(35, 42, 39, 42, PH)
-# moletom
-for y in range(24, 37):
-    half = 6 + (y - 24) // 2
-    av.rect(21 - half, y, 21 + half, y, TOP)
-    av.set(21 - half, y, TOP_S); av.set(21 + half, y, TOP_S)
-# mechas da frente sobre os ombros
-for y in range(18, 35):
-    wv = round(math.sin(y / 2.0 + 1))
-    av.rect(10 + wv, y, 12 + wv, y, HAIR)
-    av.rect(30 - wv, y, 32 - wv, y, HAIR)
-    if y % 4 == 0:
-        av.set(11 + wv, y, HAIR_L); av.set(31 - wv, y, HAIR_L)
-# braços indo até o teclado
-line_cells(av, 14, 26, 13, 34, TOP_S, 3)
-line_cells(av, 28, 26, 20, 36, TOP_S, 3)
-# pescoço e rosto (mais arredondado, estilo chibi)
-av.rect(19, 22, 23, 24, SKIN_S)
-av.ellipse(21, 15.5, 8.6, 8.0, SKIN)
-# franja com repartido de lado
-av.ellipse(21, 13, 10.5, 10, HAIR, cond=lambda x, y: y <= 10)
-for x in range(12, 21):
-    av.set(x, 11, HAIR)
-for x in (12, 13, 14, 15, 16):
-    av.set(x, 12, HAIR)
-for x in (12, 13):
-    av.set(x, 13, HAIR)
-for x in (24, 25, 27, 28, 29, 30):
-    av.set(x, 11, HAIR)
-for x in (29, 30):
-    av.set(x, 12, HAIR)
-for (x, y) in ((22, 9), (22, 10), (21, 10)):
-    av.set(x, y, HAIR_S)                       # risca do cabelo
-for (x, y) in ((15, 6), (16, 5), (17, 5), (26, 6), (27, 7), (14, 9), (15, 9)):
-    av.set(x, y, HAIR_L)
-# olhos grandes e redondos com brilho (olhando para a tela, à esquerda)
-for ex in (15, 25):
-    av.rect(ex, 14, ex + 2, 14, LASH)          # cílios
-    av.rect(ex - 1, 15, ex + 2, 18, IRIS)
-    av.rect(ex - 1, 15, ex, 17, PUPIL)
-    av.set(ex - 1, 15, "#ffffff")              # brilho
-    av.set(ex + 1, 18, IRIS_L); av.set(ex + 2, 18, IRIS_L)
-    av.set(ex + 2, 15, LASH)
-av.rect(13, 19, 14, 19, "#ff9bb5"); av.rect(28, 19, 29, 19, "#ff9bb5")
-av.set(20, 21, "#d2477f"); av.set(21, 21, "#d2477f"); av.set(19, 20, "#e98aa9"); av.set(22, 20, "#e98aa9")
-# fone de ouvido
-for y in range(av.h):
-    for x in range(av.w):
-        d = math.hypot(x - 21, y - 13)
-        if 11.6 <= d <= 12.8 and y <= 9:
-            av.set(x, y, PH)
-av.rect(7, 11, 10, 18, PH); av.rect(8, 12, 9, 17, PH_S)
-av.rect(32, 11, 35, 18, PH); av.rect(33, 12, 34, 17, PH_S)
-av.outline()
+AX, AY, AS = 700, 50, 6
+SKIN = "#fddab5"
+# pálpebras: piscar normal e olhos fechados enquanto toma o café
+lids = Grid(22, 33)
+for (x0, x1) in ((6, 8), (13, 15)):
+    lids.rect(x0, 13, x1, 14, SKIN)
+    lids.rect(x0, 15, x1, 15, "#222034")
 
-# pálpebras (piscar)
-lids = Grid(42, 48)
-for ex in (15, 25):
-    lids.rect(ex - 1, 14, ex + 2, 17, SKIN)
-    lids.rect(ex - 1, 18, ex + 2, 18, LASH)
+# caneca de café segurada com as duas mãos
+MUG = [
+    "a.aaaaaa.a..",
+    "alawwwwwala.",
+    "alwwwwwwwaaa",
+    "alwwPwPwwa.a",
+    "alwwPPPwwa.a",
+    "alwwwPwwwaaa",
+    "alwwwwwwwa..",
+    ".aaaaaaaa...",
+]
+MUG_COLS = {"a": "#222034", "w": "#fff4fa", "P": "#ff5fa2", "l": SKIN}
+mug = Grid(len(MUG[0]), len(MUG))
+for y, row in enumerate(MUG):
+    for x, v in enumerate(row):
+        if v in MUG_COLS:
+            mug.set(x, y, MUG_COLS[v])
+MX, MY = AX + 5 * AS, AY + 23 * AS     # caneca na altura da cintura, sem cobrir a gravata
 
-AX, AY, AS = 640, 22, 5
-add(f'<g class="bob">{av.svg(AX, AY, AS)}<g class="blink">{lids.svg(AX, AY, AS)}</g>')
+# fumacinha (três fios ondulados que sobem e somem)
+steam = []
+for i, dx in enumerate((2, 4.5, 7)):
+    pts = "".join(f'<rect x="{MX + (dx + (1 if k % 2 else 0)) * AS:.0f}" y="{MY - (k + 1) * AS * 0.8:.0f}" '
+                  f'width="{AS * 0.8:.0f}" height="{AS * 0.8:.0f}" fill="#f6e9f2"/>' for k in range(4))
+    steam.append(f'<g class="steam" style="animation-delay:{i * 0.6:.1f}s">{pts}</g>')
 
-# notebook em 3/4: tela à esquerda, teclado na frente dela
-SX, SY, SW, SH, SK = 658, 126, 74, 54, 0.28   # canto, largura, altura, inclinação
-add(f'<g transform="matrix(1 {SK} 0 1 {SX} {SY})">'
-    f'<rect x="0" y="0" width="{SW}" height="{SH}" rx="2" fill="{LAP}" stroke="#7a2350" stroke-width="2"/>'
-    f'<rect x="4" y="4" width="{SW - 8}" height="{SH - 8}" fill="#170c1a"/>')
-code = [(8, 9, 26, PINK_L), (8, 16, 44, "#7ee0c3"), (15, 23, 34, WHITE), (15, 30, 46, "#ffd27a"),
-        (15, 37, 22, PINK_L), (8, 44, 36, "#7ee0c3")]
-n = len(code)
+CSS_EXTRA.append(
+    ".sip{animation:sip 6s ease-in-out infinite}"
+    "@keyframes sip{0%,55%,100%{transform:translateY(0)}63%,80%{transform:translateY(-42px)}88%{transform:translateY(0)}}"
+    ".sipeyes{opacity:0;animation:sipeyes 6s steps(1) infinite}"
+    "@keyframes sipeyes{0%,61%{opacity:0}62%,82%{opacity:1}83%,100%{opacity:0}}"
+    ".steamwrap{animation:steamwrap 6s ease-in-out infinite}"
+    "@keyframes steamwrap{0%,52%{opacity:1}58%,86%{opacity:0}94%,100%{opacity:1}}"
+    ".steam{opacity:0;animation:steam 1.8s ease-out infinite}"
+    "@keyframes steam{0%{opacity:0;transform:translateY(4px)}30%{opacity:.85}100%{opacity:0;transform:translateY(-16px)}}")
+
+add(f'<g class="bob">{doll.svg(AX, AY, AS)}'
+    f'<g class="blink">{lids.svg(AX, AY, AS)}</g>'
+    f'<g class="sipeyes">{lids.svg(AX, AY, AS)}</g>'
+    f'<g class="sip">{mug.svg(MX, MY, AS)}<g class="steamwrap">{"".join(steam)}</g></g>'
+    f'</g>')
+
+# ---------------------------------------------------------------- notebook no chão, codando sozinho
+LX, LY, LW, LH = 596, 160, 80, 54
+add(f'<g filter="url(#glow)">'
+    f'<rect x="{LX}" y="{LY}" width="{LW}" height="{LH}" rx="3" fill="#ffa8d6" stroke="#7a2350" stroke-width="2"/>'
+    f'<rect x="{LX + 5}" y="{LY + 5}" width="{LW - 10}" height="{LH - 10}" fill="#170c1a"/></g>')
+code = [(10, 10, 28, PINK_L), (10, 17, 48, "#7ee0c3"), (17, 24, 36, WHITE), (17, 31, 50, "#ffd27a"),
+        (17, 38, 24, PINK_L), (10, 45, 40, "#7ee0c3")]
 for i, (x, y, w, col) in enumerate(code):
     a, b = 5 + i * 12, 5 + i * 12 + 9
     CSS_EXTRA.append(f".c{i}{{transform-box:fill-box;transform-origin:left;animation:c{i} 6s steps(6) infinite}}"
                      f"@keyframes c{i}{{0%,{a}%{{transform:scaleX(0)}}{b}%,90%{{transform:scaleX(1);opacity:1}}"
                      f"96%,100%{{transform:scaleX(1);opacity:0}}}}")
-    add(f'<rect class="c{i}" x="{x}" y="{y}" width="{w}" height="4" fill="{col}"/>')
-add(f'<rect class="cur" x="48" y="44" width="5" height="4" fill="{PINK}" style="animation-delay:0s,0s"/>'
-    f'</g>')
-# base/teclado: matriz leva o quadrado unitário ao paralelogramo da base
-u = (SW, SW * SK)
-v = (24, 22)
-bx, by = SX, SY + SH
-add(f'<polygon points="{bx},{by} {bx + u[0]},{by + u[1]} {bx + u[0] + v[0]},{by + u[1] + v[1]} {bx + v[0]},{by + v[1]}" '
+    add(f'<rect class="c{i}" x="{LX + x}" y="{LY + y}" width="{w}" height="4" fill="{col}"/>')
+add(f'<rect class="cur" x="{LX + 54}" y="{LY + 45}" width="5" height="4" fill="{PINK}" style="animation-delay:0s,0s"/>')
+add(f'<polygon points="{LX - 8},{LY + LH + 14} {LX + LW + 8},{LY + LH + 14} {LX + LW},{LY + LH} {LX},{LY + LH}" '
     f'fill="#f7d3e8" stroke="#7a2350" stroke-width="2" stroke-linejoin="round"/>')
-keys = []
-for r in range(3):
-    for c in range(7):
-        keys.append(f'<rect x="{0.08 + c * 0.125:.3f}" y="{0.15 + r * 0.22:.3f}" width="0.09" height="0.14" fill="{LAP_S}"/>')
-add(f'<g transform="matrix({u[0]} {u[1]} {v[0]} {v[1]} {bx} {by})">{"".join(keys)}</g>')
-# mãos digitando por cima do teclado
-hand = lambda x, y: (f'<rect x="{x - 1}" y="{y - 1}" width="14" height="9" rx="2" fill="#a0605a"/>'
-                     f'<rect x="{x}" y="{y}" width="12" height="7" rx="2" fill="{SKIN}"/>')
-add(f'<g class="typeL">{hand(700, 196)}</g><g class="typeR">{hand(732, 206)}</g>')
-add('</g>')  # fim do bob
+add("".join(f'<rect x="{LX + 4 + c * 9}" y="{LY + LH + 3 + r * 5}" width="6" height="3" fill="#d95f9b"/>'
+            for r in range(2) for c in range(8)))
 
-# ---------------------------------------------------------------- gato preto dormindo (à esquerda da avatar)
+# ---------------------------------------------------------------- gatos (mesmo estilo; muda só a pelagem)
 CAT, WHT = "#1d1722", "#f4eef4"
+COLS = {"B": CAT, "W": WHT, "P": "#ff9ccf", "p": "#ff7ab8", "k": "#3a2f44",
+        "O": "#c9763c", "o": "#8f4c26", "C": "#f3d3b0", "A": "#f0a92e", "E": "#1d1722", "N": "#ff8fae"}
+
+
+def from_map(rows):
+    g = Grid(max(len(r) for r in rows), len(rows))
+    for y, row in enumerate(rows):
+        for x, v in enumerate(row):
+            if v in COLS:
+                g.set(x, y, COLS[v])
+    g.outline("#5a3352")
+    return g
+
+
+# gato preto dormindo
 CAT_MAP = [
     "..........................",
     "..........................",
@@ -468,65 +486,44 @@ CAT_MAP = [
 ]
 EARS_MAP = ["..B...B...", ".BPB.BPB..", ".BBBBBBB.."]
 TAIL_MAP = ["......BB", ".....BWB", "....BB..", "...BB...", "..BB....", ".BB.....", "BB......"]
-COLS = {"B": CAT, "W": WHT, "P": "#ff9ccf", "p": "#ff7ab8", "k": "#3a2f44",
-        "O": "#c9763c", "o": "#8f4c26", "C": "#f3d3b0", "A": "#f0a92e", "E": "#1d1722", "N": "#ff8fae"}
-
-
-def from_map(rows):
-    g = Grid(max(len(r) for r in rows), len(rows))
-    for y, row in enumerate(rows):
-        for x, v in enumerate(row):
-            if v in COLS:
-                g.set(x, y, COLS[v])
-    g.outline("#5a3352")
-    return g
-
-
 cat, ears, tail = from_map(CAT_MAP), from_map(EARS_MAP), from_map(TAIL_MAP)
-CX0, CY0, CS = 548, 222, 3.6
+CX0, CY0, CS = 424, 224, 3.6
 add(f'<g class="breath">{cat.svg(CX0, CY0, CS)}</g>'
     f'<g class="ear">{ears.svg(CX0, CY0, CS)}</g>'
     f'<g class="tail">{tail.svg(round(CX0 + 23 * CS, 1), round(CY0 - 1 * CS, 1), CS)}</g>')
 for i in range(3):
-    add(f'<g transform="translate({CX0 + 30 + i * 6} {CY0 + 2})"><text class="z" x="0" y="0" '
+    add(f'<g transform="translate({CX0 + 34 + i * 6} {CY0 + 12})"><text class="z" x="0" y="0" '
         f'font-family="\'Courier New\',monospace" font-weight="bold" font-size="{11 + i * 3}" fill="{PINK_L}" '
         f'style="animation-delay:{i * 1.2:.1f}s">z</text></g>')
 
-# ---------------------------------------------------------------- gatinha escaminha brincando com Júpiter
-TORT = [
-    "..B...........B...",
-    ".BBB.........BBB..",
-    ".BPBB.......BBPB..",
-    ".BBBBBBBBCBBBBBB..",
-    "BBBOBBBBBCBBBBOBB.",
-    "BBBBBBBBBCCBBBBBB.",
-    "BBAAAEBBBCCBAAAEB.",
-    "BBAAEEBBCCCBAAEEB.",
-    "BBBBBBBCCNCCBBBBB.",
-    ".BBBBBBBCCCBBBBB..",
-    "..BBBBBBBBBBBBB...",
-    "...BBBBOBBBBBB....",
-    "..BBBBBOOBBBBBB...",
-    "..BBBBCCBBBBOBBB..",
-    ".BBBBBCCBBBBBBBBB.",
-    ".BBOBBBBBBBBBOBBB.",
-    ".BBBBBBBBBBBBBBBB.",
-    ".BBBBBBBBOBBBBBBB.",
-    "..BBB...BBB..BBBB.",
-    "..BBB...BBB.......",
+# gatinha escaminha: mesmo corpo, manchas caramelo, listra clara no nariz, olhos abertos
+TORT_MAP = [
+    "..........................",
+    "..........................",
+    ".BBBBBBB..................",
+    "BBBBCBBBB....BBBOOBBB.....",
+    "BAEBCBAEBBBBBOOBBBBBBBB...",
+    "BBBBCCBBBBBBBBOBBBBBOBBB..",
+    "BBBCNCBBBBBBBBBBBBOOBBBBB.",
+    "BBBBCBBBOOBBBBBBBBBOBBBBB.",
+    ".BBBBBBBBOBBBBBBBBBBBBBBB.",
+    ".BBBOBBBBBBBBBBOBBBBBBBBB.",
+    "..BBBBBBBBBBBBBBBBBBBBBB..",
+    "......BBBBOBBBBBBBBBBBB...",
+    "......BBOB................",
 ]
-tort = from_map(TORT)
-TAILT = ["..BB", ".BOB", ".BB.", "BB..", "BB..", "BBB."]
-tailt = from_map(TAILT)
-ARM = ["BBB", "BBB", "BOB", "BBB", "BBB", "BBB", "BBB", "BOB", "BBB", "BBB", "CCC"]
-arm = from_map(ARM)
-TX, TY, TS = 902, 196, 3.4
+TEARS_MAP = ["..B...B...", ".BPB.OPB..", ".BBBBBBB.."]
+TTAIL_MAP = ["......BB", ".....BOB", "....BB..", "...BO...", "..BB....", ".BB.....", "BB......"]
+ARM = ["BBB", "BBB", "BBB", "BOB", "BBB", "BBB", "BBB", "BBB", "BBB", "BBB", "CBC"]
+tort, tears, ttail, arm = from_map(TORT_MAP), from_map(TEARS_MAP), from_map(TTAIL_MAP), from_map(ARM)
+TX, TY, TS = 870, 224, 3.6
 add(f'<g class="breath">{tort.svg(TX, TY, TS)}</g>'
-    f'<g class="tail" style="animation-duration:1.6s">{tailt.svg(round(TX + 16 * TS, 1), round(TY + 12 * TS, 1), TS)}</g>')
+    f'<g class="ear" style="animation-delay:1.3s">{tears.svg(TX, TY, TS)}</g>'
+    f'<g class="tail" style="animation-duration:1.6s">{ttail.svg(round(TX + 23 * TS, 1), round(TY - 1 * TS, 1), TS)}</g>')
 # patinha: gira em torno do ombro para cima e bate no Júpiter
-pvx, pvy = TX + 2 * TS, TY + 11 * TS
+pvx, pvy = TX + 1 * TS, TY + 9 * TS
 CSS_EXTRA.append(f".paw{{transform-origin:{pvx + 1.5 * TS:.1f}px {pvy:.1f}px;animation:paw 3.2s ease-in-out infinite}}"
-                 "@keyframes paw{0%,62%,100%{transform:rotate(0)}70%{transform:rotate(140deg)}74%{transform:rotate(152deg)}84%{transform:rotate(0)}}")
+                 "@keyframes paw{0%,62%,100%{transform:rotate(0)}70%{transform:rotate(155deg)}74%{transform:rotate(168deg)}84%{transform:rotate(0)}}")
 add(f'<g class="paw">{arm.svg(round(pvx, 1), round(pvy, 1), TS)}</g>')
 
 # Júpiter: faixas em tons quentes + grande mancha vermelha
@@ -548,7 +545,7 @@ for (x, y) in ((10, 9), (11, 9), (10, 10), (11, 10), (12, 10)):
     pl.set(x, y, JUP["s"])
 pl.outline("#6a3348")
 PS = 3.4
-PCX, PCY = TX - 2 * TS, 170
+PCX, PCY = TX - 2, 186
 half = 8.5 * PS
 CSS_EXTRA.append(".bat{animation:bat 3.2s ease-in-out infinite}"
                  "@keyframes bat{0%,70%,100%{transform:translateY(0)}78%{transform:translateY(-30px)}"
@@ -558,8 +555,10 @@ CSS_EXTRA.append(".bat{animation:bat 3.2s ease-in-out infinite}"
                  ".orbit{transform-box:fill-box;transform-origin:center;animation:orbit 3.2s ease-in-out infinite}"
                  "@keyframes orbit{0%,70%{transform:rotate(-18deg)}96%,100%{transform:rotate(342deg)}}")
 add(f'<g class="bat"><g class="float" style="animation-duration:5s">'
-    f'<g class="orbit"><ellipse cx="{PCX}" cy="{PCY}" rx="{half + 16}" ry="9" fill="none" stroke="#ff9ccf" '
-    f'stroke-width="3" stroke-dasharray="6 5" filter="url(#glow)"/></g>'
+    f'<g class="orbit"><ellipse cx="{PCX}" cy="{PCY}" rx="{half + 16}" ry="9" fill="none" stroke="#ff5fa2" '
+    f'stroke-opacity=".3" stroke-width="7" stroke-dasharray="6 5"/>'
+    f'<ellipse cx="{PCX}" cy="{PCY}" rx="{half + 16}" ry="9" fill="none" stroke="#ff9ccf" '
+    f'stroke-width="3" stroke-dasharray="6 5"/></g>'
     f'<g class="roll">{pl.svg(round(PCX - half, 1), round(PCY - half, 1), PS)}</g>'
     f'</g></g>')
 
