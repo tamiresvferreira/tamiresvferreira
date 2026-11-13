@@ -40,7 +40,7 @@ Também me importo com a parte que fica entre o código e as pessoas: documenta�
 **⚙️ Automação & ☁️ Cloud**<br>
 <img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
 <img src="./assets/icons/n8n.svg" height="48" alt="n8n"/>
-<img src="https://img.shields.io/badge/BotConversa-0d1117?style=flat-square&logo=whatsapp&logoColor=25D366" alt="BotConversa"/>
+<img src="./assets/icons/botconversa.svg" height="48" alt="BotConversa"/>
 
 **🎨 Front-end & 🔌 Ferramentas**<br>
 <img src="https://skillicons.dev/icons?i=figma,react,js,html,css&theme=dark" alt="Figma, React, JavaScript, HTML, CSS"/><br>
