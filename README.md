@@ -113,16 +113,6 @@ Do protótipo no **Figma** à interface em **React**: dashboards por perfil de u
 
 ## 📈 Atividade
 
-<p align="center">
-  <!-- Gerado pelo workflow .github/workflows/snake.yml (script .github/scripts/cards.py) -->
-  <img width="100%" src="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/atividade.svg" alt="Gráfico de atividade no GitHub"/>
-</p>
-
-<p align="center">
-  <img height="170" src="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/linguagens.svg" alt="Linguagens que mais uso"/>
-  <img height="170" src="https://streak-stats.demolab.com?user=tamiresvferreira&hide_border=true&background=0d1117&ring=ff5fa2&fire=ff5fa2&currStreakLabel=ff5fa2&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&stroke=30363d&locale=pt_br" alt="Sequência de contribuições"/>
-</p>
-
 <!-- Gerado automaticamente pelo workflow .github/workflows/snake.yml -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tamiresvferreira/tamiresvferreira/output/github-contribution-grid-snake-dark.svg"/>
