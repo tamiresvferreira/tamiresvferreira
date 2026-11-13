@@ -1,17 +1,13 @@
-<!-- ===================== BANNER PIXEL ===================== -->
+<!-- ===================== BANNER ANIMADO ===================== -->
+<!-- Gerado por .github/scripts/gerar_banner_neon.py -->
 <p align="center">
-  <img src="./assets/pixel-banner.png" alt="Tamires Ferreira — AI & Data Science" width="100%"/>
+  <img src="./assets/banner-neon.svg" alt="Hello world! I am Tamires — AI & Data Science" width="100%"/>
 </p>
 
 <p align="center">
   <a href="https://br.linkedin.com/in/tamiresvferreiras"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=ff5fa2" alt="LinkedIn"/></a>
   <a href="mailto:tamiresvferreiras@gmail.com"><img src="https://img.shields.io/badge/E--mail-0d1117?style=for-the-badge&logo=gmail&logoColor=ff5fa2" alt="E-mail"/></a>
   <img src="https://komarev.com/ghpvc/?username=tamiresvferreira&label=visitas&color=ff5fa2&style=for-the-badge" alt="Visitas ao perfil"/>
-</p>
-
-<!-- ===================== HELLO WORLD ANIMADO ===================== -->
-<p align="center">
-  <img src="./assets/banner.svg" alt="Hello world! I am Tamires" width="100%"/>
 </p>
 
 <!-- ===================== SOBRE MIM + TECH STACK ===================== -->
