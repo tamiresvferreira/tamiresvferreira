@@ -85,12 +85,13 @@ Do protótipo no **Figma** à interface em **React**: dashboards por perfil de u
   <img src="https://img.shields.io/badge/R-0d1117?style=flat-square&logo=r&logoColor=ff5fa2" alt="R"/>
 </td>
 <td width="50%" valign="top">
-  <a href="https://github.com/tamiresvferreira/tamiresvferreira/blob/main/Classifica%C3%A7%C3%A3o_de_Sementes_Vfinal.ipynb"><img src="./assets/projeto-sementes.png" width="100%" alt="Classificação de Sementes"/></a>
+  <a href="https://github.com/tamiresvferreira/classificacao-sementes-trigo"><img src="./assets/projeto-sementes.png" width="100%" alt="Classificação de Sementes"/></a>
   <h3>🌱 Classificação de Sementes</h3>
-  <b>Machine Learning com CRISP-DM</b><br>
-  Modelos que classificam três variedades de trigo (Kama, Rosa e Canadian) a partir das medidas físicas dos grãos.<br><br>
+  <b>Machine Learning com CRISP-DM + demo em Streamlit</b><br>
+  SVM que identifica três variedades de trigo (Kama, Rosa e Canadian) pelas medidas do grão, com F1 de 0,96 na validação cruzada, análise de erros e app interativo.<br><br>
   <img src="https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=ff5fa2" alt="Python"/>
   <img src="https://img.shields.io/badge/Scikit--learn-0d1117?style=flat-square&logo=scikitlearn&logoColor=ff5fa2" alt="Scikit-learn"/>
+  <img src="https://img.shields.io/badge/Streamlit-0d1117?style=flat-square&logo=streamlit&logoColor=ff5fa2" alt="Streamlit"/>
 </td>
 </tr>
 </table>
