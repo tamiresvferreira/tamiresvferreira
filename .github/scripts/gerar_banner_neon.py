@@ -17,6 +17,7 @@ PINK_L = "#ff9ccf"
 WHITE = "#f6e9f2"
 
 parts = []  # pedaços de SVG
+CSS_EXTRA = []  # keyframes gerados no meio do desenho
 add = parts.append
 
 
@@ -182,7 +183,8 @@ CSS = """
 
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
     f'aria-label="Hello world! I am Tamires — AI &amp; Data Science">')
-add(f"<style>{CSS}</style>")
+STYLE_AT = len(parts)
+add("")
 add('<defs>'
     '<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.4" result="b"/>'
     '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
@@ -237,16 +239,16 @@ def sparkle(x, y, size, col, delay, dur):
 
 stars = [(70, 40, 3, "#ff8a7a", 0, 2.6), (95, 62, 2, "#ff8a7a", .8, 3.1), (150, 28, 1, WHITE, 1.2, 2.4),
          (250, 18, 1, WHITE, .3, 3.3), (420, 22, 1, WHITE, 2.0, 2.8), (520, 92, 1, WHITE, 1.5, 3.0),
-         (585, 150, 1, PINK_L, .6, 2.5), (600, 210, 2, PINK_L, 1.9, 3.4), (700, 30, 1, WHITE, .9, 2.7),
+         (585, 150, 1, PINK_L, .6, 2.5), (620, 200, 2, PINK_L, 1.9, 3.4), (700, 30, 1, WHITE, .9, 2.7),
          (770, 110, 1, WHITE, 2.3, 3.2), (960, 30, 2, WHITE, .4, 2.9), (975, 200, 1, PINK_L, 1.1, 2.6),
-         (880, 160, 1, WHITE, 1.7, 3.0), (30, 255, 1, WHITE, 2.5, 2.8), (330, 262, 1, PINK_L, .2, 3.1)]
+         (830, 110, 1, WHITE, 1.7, 3.0), (30, 255, 1, WHITE, 2.5, 2.8), (330, 262, 1, PINK_L, .2, 3.1)]
 for st in stars:
     add(sparkle(*st))
 for i, (x, y) in enumerate([(200, 60), (300, 150), (470, 160), (560, 40), (640, 250), (930, 245), (820, 20)]):
     add(f'<rect class="tw" x="{x}" y="{y}" width="2" height="2" fill="{WHITE}" style="animation-delay:{i * 0.45:.2f}s"/>')
 
 # ---------------------------------------------------------------- textos
-CX = 335  # centro do bloco de texto
+CX = 330  # centro do bloco de texto
 t = 0.4   # relógio da animação de entrada
 
 # linha 1: "> HELLO WORLD! I AM" digitando
@@ -254,7 +256,7 @@ p1 = 4
 l1 = "HELLO WORLD! I AM"
 full = "> " + l1
 x0 = CX - text_width(full, p1) // 2
-y1 = 32
+y1 = 54
 add(f'<g filter="url(#glow)">{glyph(">", x0, y1, p1, PINK, rx=1)}</g>')
 xs = x0 + 2 * 6 * p1
 add('<g filter="url(#glow)">')
@@ -267,50 +269,32 @@ add(f'<rect class="cur" x="{xs + len(l1) * 6 * p1 + 2}" y="{y1 - 2}" width="5" h
     f'style="animation-delay:{t_end1:.2f}s,{t_end1:.2f}s"/>')
 
 # linha 2: TAMIRES em letreiro neon
-p2 = 9
+p2 = 10
 l2 = "TAMIRES"
 x2 = CX - text_width(l2, p2) // 2
-y2 = 76
+y2 = 100
 t2 = t_end1 + 0.15
 add('<g class="neon" filter="url(#glow2)">')
 for i, ch in enumerate(l2):
     add(f'<g class="drop" style="animation-delay:{t2 + i * 0.12:.2f}s"><g class="wave" style="animation-delay:{i * 0.22:.2f}s">'
         f'{glyph(ch, x2 + i * 6 * p2, y2, p2, "#ff7ab8", gap=1, rx=1)}</g></g>')
 add('</g>')
-t3 = t2 + len(l2) * 0.12 + 0.4
+t5 = t2 + len(l2) * 0.12 + 0.4
 
-# linha 3: AI & DATA SCIENCE com tracinhos
-p3 = 3
-l3 = "AI & DATA SCIENCE"
-w3 = text_width(l3, p3)
-x3 = CX - w3 // 2
-y3 = 160
-add(f'<g class="fade" style="animation-delay:{t3:.2f}s" filter="url(#glow)">{"".join(glyph(ch, x3 + i * 6 * p3, y3, p3, WHITE, gap=0) for i, ch in enumerate(l3))}</g>')
-add(f'<rect class="lineL" x="{x3 - 80}" y="{y3 + 9}" width="64" height="2" fill="{PINK_L}" style="animation-delay:{t3:.2f}s"/>')
-add(f'<rect class="lineR" x="{x3 + w3 + 16}" y="{y3 + 9}" width="64" height="2" fill="{PINK_L}" style="animation-delay:{t3:.2f}s"/>')
-
-# linha 4: frase + coração batendo
-t4 = t3 + 0.4
-add(f'<g class="fade" style="animation-delay:{t4:.2f}s">'
-    f'<text x="{CX - 12}" y="212" text-anchor="middle" font-family="\'Courier New\',Courier,monospace" font-size="18" '
-    f'font-weight="bold" fill="{PINK_L}" textLength="400" lengthAdjust="spacingAndGlyphs" filter="url(#glow)">'
-    f'Turning data into intelligent solutions</text>')
-heart = [".##.##.", "#######", "#######", ".#####.", "..###..", "...#..."]
-hx, hy, hp = CX + 198, 199, 2.4
-hg = "".join(f'<rect x="{hx + c * hp:.1f}" y="{hy + r * hp:.1f}" width="{hp:.1f}" height="{hp:.1f}" fill="{PINK_L}"/>'
-             for r, row in enumerate(heart) for c, v in enumerate(row) if v == "#")
-add(f'<g class="beat" filter="url(#glow)">{hg}</g></g>')
-
-# linha 5: tags piscando em sequência
-t5 = t4 + 0.4
-tags = [("PYTHON", 138, 56), ("MACHINE LEARNING", 224, 149), ("DATA ANALYTICS", 403, 130)]
-add(f'<g class="fade" style="animation-delay:{t5:.2f}s" font-family="\'Courier New\',Courier,monospace" font-size="13" '
+# linha 3: tags acendendo em sequência
+tags = [("AI", 20), ("PYTHON", 60), ("DATA SCIENCE", 120), ("MACHINE LEARNING", 160)]
+gapt = 32
+xt = CX - (sum(w for _, w in tags) + gapt * (len(tags) - 1)) // 2
+add(f'<g class="fade" style="animation-delay:{t5:.2f}s" font-family="\'Courier New\',Courier,monospace" font-size="14" '
     f'font-weight="bold">')
-for i, (tg, x, w) in enumerate(tags):
-    add(f'<text class="tag" x="{x}" y="250" fill="#cdbdcb" textLength="{w}" lengthAdjust="spacingAndGlyphs" '
-        f'style="animation-delay:{i * 1.5:.1f}s">{tg}</text>')
-for x in (207, 386):
-    add(f'<rect class="node" x="{x}" y="242" width="5" height="5" fill="{PINK}"/>')
+for i, (tg, w) in enumerate(tags):
+    add(f'<text class="tag" x="{xt}" y="214" fill="#cdbdcb" textLength="{w}" lengthAdjust="spacingAndGlyphs" '
+        f'style="animation-delay:{i * 1.1:.1f}s">{tg}</text>')
+    xt += w
+    if i < len(tags) - 1:
+        add(f'<rect class="node" x="{xt + gapt // 2 - 3}" y="205" width="5" height="5" fill="{PINK}" '
+            f'style="animation-delay:{i * 0.5:.1f}s"/>')
+        xt += gapt
 add('</g>')
 
 # ---------------------------------------------------------------- gema
@@ -323,46 +307,34 @@ gem.set(3, 3, "#ff9ccf"); gem.set(4, 2, "#ff9ccf"); gem.set(3, 4, "#ff9ccf")
 add(f'<g class="float" style="animation-duration:4s"><g class="spin" filter="url(#glow)">{gem.svg(590, 34, 4)}</g></g>')
 
 # ---------------------------------------------------------------- janela com gráfico
-wx, wy = 840, 22
+wx, wy = 846, 20
 add(f'<g class="float" style="animation-duration:6s;animation-delay:1s" filter="url(#glow)">'
-    f'<rect x="{wx}" y="{wy}" width="96" height="66" rx="3" fill="#1a0e1c" stroke="{PINK}" stroke-width="2.5"/>'
+    f'<rect x="{wx}" y="{wy}" width="96" height="62" rx="3" fill="#1a0e1c" stroke="{PINK}" stroke-width="2.5"/>'
     f'<rect x="{wx}" y="{wy}" width="96" height="11" rx="3" fill="#3a1233"/>'
     + "".join(f'<rect x="{wx + 6 + i * 7}" y="{wy + 4}" width="4" height="4" fill="{PINK_L}"/>' for i in range(3)))
-for i, (h, d) in enumerate([(14, 0), (26, .4), (20, .8), (36, 1.2), (30, 1.6), (44, 2.0)]):
-    add(f'<rect class="bar" x="{wx + 10 + i * 13}" y="{wy + 60 - h}" width="8" height="{h}" fill="{PINK if i % 2 else PINK_L}" '
+for i, (h, d) in enumerate([(12, 0), (22, .4), (18, .8), (32, 1.2), (26, 1.6), (40, 2.0)]):
+    add(f'<rect class="bar" x="{wx + 10 + i * 13}" y="{wy + 56 - h}" width="8" height="{h}" fill="{PINK if i % 2 else PINK_L}" '
         f'style="animation-delay:{d}s"/>')
 add('</g>')
 
-# ---------------------------------------------------------------- planeta
-pl = Grid(21, 21)
-pl.ellipse(10, 10, 10, 10, "#c24d8f")
-for y in range(21):
-    for x in range(21):
-        if pl.get(x, y):
-            if y in (5, 6, 12, 13):
-                pl.set(x, y, "#a33a78")
-            if y in (8, 9, 16):
-                pl.set(x, y, "#e27ab3")
-            if (x - 6) ** 2 + (y - 5) ** 2 < 6:
-                pl.set(x, y, "#f6a6cf")
-px0, py0, ps = 905, 104, 3.2
-pcx, pcy = px0 + 10.5 * ps, py0 + 10.5 * ps
-add(f'<g class="float" style="animation-duration:5.5s">'
-    f'<g transform="rotate(-18 {pcx} {pcy})" filter="url(#glow)">'
-    f'<path d="M{pcx - 58} {pcy} A58 13 0 0 0 {pcx + 58} {pcy}" fill="none" stroke="#ff9ccf" stroke-width="4"/>'
-    f'</g>{pl.svg(px0, py0, ps)}'
-    f'<g transform="rotate(-18 {pcx} {pcy})" filter="url(#glow)">'
-    f'<path d="M{pcx - 58} {pcy} A58 13 0 0 1 {pcx + 58} {pcy}" fill="none" stroke="#ff9ccf" stroke-width="4" '
-    f'stroke-dasharray="0 45 400"/></g></g>')
+
+def line_cells(g, x0, y0, x1, y1, col, thick=3):
+    n = max(abs(x1 - x0), abs(y1 - y0))
+    for i in range(n + 1):
+        x = round(x0 + (x1 - x0) * i / n)
+        y = round(y0 + (y1 - y0) * i / n)
+        for dx in range(thick):
+            g.set(x + dx - thick // 2, y, col)
+
 
 # ---------------------------------------------------------------- avatar
 HAIR, HAIR_S, HAIR_L = "#f2cf78", "#d3a24a", "#fff1bd"
-SKIN, SKIN_S = "#ffd9c4", "#f0b49a"
+SKIN, SKIN_S = "#ffdcc8", "#f0b49a"
 PH, PH_S = "#ff7ab8", "#c2386f"
 TOP, TOP_S = "#b83a7c", "#86285a"
 JEANS, JEANS_S = "#3b3656", "#2a2642"
-LAP, LAP_S = "#ffa8d6", "#e0699f"
-EYE = "#3a2433"
+LAP, LAP_S = "#ffa8d6", "#d95f9b"
+LASH, IRIS, IRIS_L, PUPIL = "#3a1f2c", "#8a5236", "#c4865a", "#2b1626"
 
 av = Grid(42, 48)
 # cabelo de trás (comprido e ondulado)
@@ -393,24 +365,38 @@ for y in range(18, 35):
     av.rect(30 - wv, y, 32 - wv, y, HAIR)
     if y % 4 == 0:
         av.set(11 + wv, y, HAIR_L); av.set(31 - wv, y, HAIR_L)
-# pescoço e rosto
+# braços indo até o teclado
+line_cells(av, 14, 26, 13, 34, TOP_S, 3)
+line_cells(av, 28, 26, 20, 36, TOP_S, 3)
+# pescoço e rosto (mais arredondado, estilo chibi)
 av.rect(19, 22, 23, 24, SKIN_S)
-av.ellipse(21, 15, 8.5, 8.2, SKIN)
-# franja
+av.ellipse(21, 15.5, 8.6, 8.0, SKIN)
+# franja com repartido de lado
 av.ellipse(21, 13, 10.5, 10, HAIR, cond=lambda x, y: y <= 10)
-for x in (13, 14, 16, 17, 18, 21, 24, 25, 26, 28, 29):
+for x in range(12, 21):
     av.set(x, 11, HAIR)
-for x in (14, 17, 25, 28):
+for x in (12, 13, 14, 15, 16):
     av.set(x, 12, HAIR)
-for (x, y) in ((16, 6), (17, 5), (18, 5), (23, 7), (24, 8)):
+for x in (12, 13):
+    av.set(x, 13, HAIR)
+for x in (24, 25, 27, 28, 29, 30):
+    av.set(x, 11, HAIR)
+for x in (29, 30):
+    av.set(x, 12, HAIR)
+for (x, y) in ((22, 9), (22, 10), (21, 10)):
+    av.set(x, y, HAIR_S)                       # risca do cabelo
+for (x, y) in ((15, 6), (16, 5), (17, 5), (26, 6), (27, 7), (14, 9), (15, 9)):
     av.set(x, y, HAIR_L)
-# olhos, bochechas, boca
-for ex in (16, 25):
-    av.rect(ex - 1, 14, ex, 17, EYE)
-    av.set(ex - 1, 14, "#ffffff")
-    av.set(ex, 17, "#7a3a5c")
-av.rect(13, 18, 14, 18, "#ff9bb5"); av.rect(27, 18, 28, 18, "#ff9bb5")
-av.rect(20, 20, 21, 20, "#c2386f")
+# olhos grandes e redondos com brilho (olhando para a tela, à esquerda)
+for ex in (15, 25):
+    av.rect(ex, 14, ex + 2, 14, LASH)          # cílios
+    av.rect(ex - 1, 15, ex + 2, 18, IRIS)
+    av.rect(ex - 1, 15, ex, 17, PUPIL)
+    av.set(ex - 1, 15, "#ffffff")              # brilho
+    av.set(ex + 1, 18, IRIS_L); av.set(ex + 2, 18, IRIS_L)
+    av.set(ex + 2, 15, LASH)
+av.rect(13, 19, 14, 19, "#ff9bb5"); av.rect(28, 19, 29, 19, "#ff9bb5")
+av.set(20, 21, "#d2477f"); av.set(21, 21, "#d2477f"); av.set(19, 20, "#e98aa9"); av.set(22, 20, "#e98aa9")
 # fone de ouvido
 for y in range(av.h):
     for x in range(av.w):
@@ -419,41 +405,51 @@ for y in range(av.h):
             av.set(x, y, PH)
 av.rect(7, 11, 10, 18, PH); av.rect(8, 12, 9, 17, PH_S)
 av.rect(32, 11, 35, 18, PH); av.rect(33, 12, 34, 17, PH_S)
-# notebook (tampa vista por trás) + base
-# mangas descendo até o teclado
-for y in range(27, 36):
-    av.rect(10, y, 12, y, TOP); av.rect(30, y, 32, y, TOP)
-av.rect(12, 26, 30, 35, LAP_S)
-av.rect(13, 27, 29, 34, LAP)
-av.rect(10, 36, 32, 38, "#f7d3e8")
-av.rect(10, 38, 32, 38, LAP_S)
 av.outline()
-
-# grade só com as mãos (animadas em separado)
-handsL, handsR = Grid(42, 48), Grid(42, 48)
-handsL.rect(11, 35, 14, 36, SKIN); handsL.outline()
-handsR.rect(28, 35, 31, 36, SKIN); handsR.outline()
 
 # pálpebras (piscar)
 lids = Grid(42, 48)
-for ex in (16, 25):
-    lids.rect(ex - 1, 14, ex, 16, SKIN)
-    lids.rect(ex - 1, 17, ex, 17, EYE)
+for ex in (15, 25):
+    lids.rect(ex - 1, 14, ex + 2, 17, SKIN)
+    lids.rect(ex - 1, 18, ex + 2, 18, LASH)
 
 AX, AY, AS = 640, 22, 5
-heart_lap = ["#.#", "###", ".#."]
-hl = "".join(f'<rect x="{AX + (19.5 + c) * AS}" y="{AY + (29 + r) * AS}" width="{AS}" height="{AS}" fill="#ffffff"/>'
-             for r, row in enumerate(heart_lap) for c, v in enumerate(row) if v == "#")
-add(f'<g class="bob">'
-    f'{av.svg(AX, AY, AS)}'
-    f'<g class="blink">{lids.svg(AX, AY, AS)}</g>'
-    f'<g class="ph" filter="url(#glow)" opacity=".0"></g>'
-    f'<g class="screen" filter="url(#glow)"><g class="beat">{hl}</g></g>'
-    f'<g class="typeL">{handsL.svg(AX, AY, AS)}</g>'
-    f'<g class="typeR">{handsR.svg(AX, AY, AS)}</g>'
-    f'</g>')
+add(f'<g class="bob">{av.svg(AX, AY, AS)}<g class="blink">{lids.svg(AX, AY, AS)}</g>')
 
-# ---------------------------------------------------------------- gato dormindo
+# notebook em 3/4: tela à esquerda, teclado na frente dela
+SX, SY, SW, SH, SK = 658, 126, 74, 54, 0.28   # canto, largura, altura, inclinação
+add(f'<g transform="matrix(1 {SK} 0 1 {SX} {SY})">'
+    f'<rect x="0" y="0" width="{SW}" height="{SH}" rx="2" fill="{LAP}" stroke="#7a2350" stroke-width="2"/>'
+    f'<rect x="4" y="4" width="{SW - 8}" height="{SH - 8}" fill="#170c1a"/>')
+code = [(8, 9, 26, PINK_L), (8, 16, 44, "#7ee0c3"), (15, 23, 34, WHITE), (15, 30, 46, "#ffd27a"),
+        (15, 37, 22, PINK_L), (8, 44, 36, "#7ee0c3")]
+n = len(code)
+for i, (x, y, w, col) in enumerate(code):
+    a, b = 5 + i * 12, 5 + i * 12 + 9
+    CSS_EXTRA.append(f".c{i}{{transform-box:fill-box;transform-origin:left;animation:c{i} 6s steps(6) infinite}}"
+                     f"@keyframes c{i}{{0%,{a}%{{transform:scaleX(0)}}{b}%,90%{{transform:scaleX(1);opacity:1}}"
+                     f"96%,100%{{transform:scaleX(1);opacity:0}}}}")
+    add(f'<rect class="c{i}" x="{x}" y="{y}" width="{w}" height="4" fill="{col}"/>')
+add(f'<rect class="cur" x="48" y="44" width="5" height="4" fill="{PINK}" style="animation-delay:0s,0s"/>'
+    f'</g>')
+# base/teclado: matriz leva o quadrado unitário ao paralelogramo da base
+u = (SW, SW * SK)
+v = (24, 22)
+bx, by = SX, SY + SH
+add(f'<polygon points="{bx},{by} {bx + u[0]},{by + u[1]} {bx + u[0] + v[0]},{by + u[1] + v[1]} {bx + v[0]},{by + v[1]}" '
+    f'fill="#f7d3e8" stroke="#7a2350" stroke-width="2" stroke-linejoin="round"/>')
+keys = []
+for r in range(3):
+    for c in range(7):
+        keys.append(f'<rect x="{0.08 + c * 0.125:.3f}" y="{0.15 + r * 0.22:.3f}" width="0.09" height="0.14" fill="{LAP_S}"/>')
+add(f'<g transform="matrix({u[0]} {u[1]} {v[0]} {v[1]} {bx} {by})">{"".join(keys)}</g>')
+# mãos digitando por cima do teclado
+hand = lambda x, y: (f'<rect x="{x - 1}" y="{y - 1}" width="14" height="9" rx="2" fill="#a0605a"/>'
+                     f'<rect x="{x}" y="{y}" width="12" height="7" rx="2" fill="{SKIN}"/>')
+add(f'<g class="typeL">{hand(700, 196)}</g><g class="typeR">{hand(732, 206)}</g>')
+add('</g>')  # fim do bob
+
+# ---------------------------------------------------------------- gato preto dormindo (à esquerda da avatar)
 CAT, WHT = "#1d1722", "#f4eef4"
 CAT_MAP = [
     "..........................",
@@ -472,11 +468,12 @@ CAT_MAP = [
 ]
 EARS_MAP = ["..B...B...", ".BPB.BPB..", ".BBBBBBB.."]
 TAIL_MAP = ["......BB", ".....BWB", "....BB..", "...BB...", "..BB....", ".BB.....", "BB......"]
-COLS = {"B": CAT, "W": WHT, "P": "#ff9ccf", "p": "#ff7ab8", "k": "#3a2f44"}
+COLS = {"B": CAT, "W": WHT, "P": "#ff9ccf", "p": "#ff7ab8", "k": "#3a2f44",
+        "O": "#c9763c", "o": "#8f4c26", "C": "#f3d3b0", "A": "#f0a92e", "E": "#1d1722", "N": "#ff8fae"}
 
 
-def from_map(rows, w=None):
-    g = Grid(w or len(rows[0]), len(rows))
+def from_map(rows):
+    g = Grid(max(len(r) for r in rows), len(rows))
     for y, row in enumerate(rows):
         for x, v in enumerate(row):
             if v in COLS:
@@ -486,20 +483,92 @@ def from_map(rows, w=None):
 
 
 cat, ears, tail = from_map(CAT_MAP), from_map(EARS_MAP), from_map(TAIL_MAP)
-CX0, CY0, CS = 856, 214, 3.6
+CX0, CY0, CS = 548, 222, 3.6
 add(f'<g class="breath">{cat.svg(CX0, CY0, CS)}</g>'
     f'<g class="ear">{ears.svg(CX0, CY0, CS)}</g>'
     f'<g class="tail">{tail.svg(round(CX0 + 23 * CS, 1), round(CY0 - 1 * CS, 1), CS)}</g>')
 for i in range(3):
-    add(f'<g transform="translate({CX0 + 30 + i * 6} {CY0 - 2})"><text class="z" x="0" y="0" '
+    add(f'<g transform="translate({CX0 + 30 + i * 6} {CY0 + 2})"><text class="z" x="0" y="0" '
         f'font-family="\'Courier New\',monospace" font-weight="bold" font-size="{11 + i * 3}" fill="{PINK_L}" '
         f'style="animation-delay:{i * 1.2:.1f}s">z</text></g>')
+
+# ---------------------------------------------------------------- gatinha escaminha brincando com Júpiter
+TORT = [
+    "..B...........B...",
+    ".BBB.........BBB..",
+    ".BPBB.......BBPB..",
+    ".BBBBBBBBCBBBBBB..",
+    "BBBOBBBBBCBBBBOBB.",
+    "BBBBBBBBBCCBBBBBB.",
+    "BBAAAEBBBCCBAAAEB.",
+    "BBAAEEBBCCCBAAEEB.",
+    "BBBBBBBCCNCCBBBBB.",
+    ".BBBBBBBCCCBBBBB..",
+    "..BBBBBBBBBBBBB...",
+    "...BBBBOBBBBBB....",
+    "..BBBBBOOBBBBBB...",
+    "..BBBBCCBBBBOBBB..",
+    ".BBBBBCCBBBBBBBBB.",
+    ".BBOBBBBBBBBBOBBB.",
+    ".BBBBBBBBBBBBBBBB.",
+    ".BBBBBBBBOBBBBBBB.",
+    "..BBB...BBB..BBBB.",
+    "..BBB...BBB.......",
+]
+tort = from_map(TORT)
+TAILT = ["..BB", ".BOB", ".BB.", "BB..", "BB..", "BBB."]
+tailt = from_map(TAILT)
+ARM = ["BBB", "BBB", "BOB", "BBB", "BBB", "BBB", "BBB", "BOB", "BBB", "BBB", "CCC"]
+arm = from_map(ARM)
+TX, TY, TS = 902, 196, 3.4
+add(f'<g class="breath">{tort.svg(TX, TY, TS)}</g>'
+    f'<g class="tail" style="animation-duration:1.6s">{tailt.svg(round(TX + 16 * TS, 1), round(TY + 12 * TS, 1), TS)}</g>')
+# patinha: gira em torno do ombro para cima e bate no Júpiter
+pvx, pvy = TX + 2 * TS, TY + 11 * TS
+CSS_EXTRA.append(f".paw{{transform-origin:{pvx + 1.5 * TS:.1f}px {pvy:.1f}px;animation:paw 3.2s ease-in-out infinite}}"
+                 "@keyframes paw{0%,62%,100%{transform:rotate(0)}70%{transform:rotate(140deg)}74%{transform:rotate(152deg)}84%{transform:rotate(0)}}")
+add(f'<g class="paw">{arm.svg(round(pvx, 1), round(pvy, 1), TS)}</g>')
+
+# Júpiter: faixas em tons quentes + grande mancha vermelha
+JUP = {"a": "#fbe3c6", "b": "#e8b48a", "c": "#c9785a", "d": "#9a4f3e", "s": "#d0473f"}
+pl = Grid(17, 17)
+pl.ellipse(8, 8, 8, 8, JUP["a"])
+for y in range(17):
+    for x in range(17):
+        if pl.get(x, y):
+            band = "a"
+            if y in (3, 4, 11):
+                band = "b"
+            if y in (6, 7, 13):
+                band = "c"
+            if y in (9, 14):
+                band = "d"
+            pl.set(x, y, JUP[band])
+for (x, y) in ((10, 9), (11, 9), (10, 10), (11, 10), (12, 10)):
+    pl.set(x, y, JUP["s"])
+pl.outline("#6a3348")
+PS = 3.4
+PCX, PCY = TX - 2 * TS, 170
+half = 8.5 * PS
+CSS_EXTRA.append(".bat{animation:bat 3.2s ease-in-out infinite}"
+                 "@keyframes bat{0%,70%,100%{transform:translateY(0)}78%{transform:translateY(-30px)}"
+                 "86%{transform:translateY(-34px)}94%{transform:translateY(-6px)}97%{transform:translateY(-2px)}}"
+                 ".roll{transform-box:fill-box;transform-origin:center;animation:roll 3.2s ease-in-out infinite}"
+                 "@keyframes roll{0%,70%{transform:rotate(0)}96%,100%{transform:rotate(360deg)}}"
+                 ".orbit{transform-box:fill-box;transform-origin:center;animation:orbit 3.2s ease-in-out infinite}"
+                 "@keyframes orbit{0%,70%{transform:rotate(-18deg)}96%,100%{transform:rotate(342deg)}}")
+add(f'<g class="bat"><g class="float" style="animation-duration:5s">'
+    f'<g class="orbit"><ellipse cx="{PCX}" cy="{PCY}" rx="{half + 16}" ry="9" fill="none" stroke="#ff9ccf" '
+    f'stroke-width="3" stroke-dasharray="6 5" filter="url(#glow)"/></g>'
+    f'<g class="roll">{pl.svg(round(PCX - half, 1), round(PCY - half, 1), PS)}</g>'
+    f'</g></g>')
 
 # ---------------------------------------------------------------- moldura
 add('</g>')
 add(f'<rect class="frame" x="1.5" y="1.5" width="{W - 3}" height="{H - 3}" rx="15" fill="none" stroke="{PINK}" '
     f'stroke-width="2" filter="url(#glow)"/>')
 add("</svg>")
+parts[STYLE_AT] = "<style>" + CSS + "".join(CSS_EXTRA) + "</style>"
 
 OUT.write_text("\n".join(parts), encoding="utf-8")
 print(f"ok: {OUT} ({OUT.stat().st_size / 1024:.0f} KB)")
