@@ -32,15 +32,14 @@ Também me importo com a parte que fica entre o código e as pessoas: documenta�
 <img src="https://skillicons.dev/icons?i=py,sklearn,tensorflow,opencv&theme=dark" alt="Python, Scikit-learn, TensorFlow, OpenCV"/>
 
 **📊 Dados**<br>
-<img src="https://skillicons.dev/icons?i=r,mysql,postgres&theme=dark" alt="R, SQL, PostgreSQL"/><br>
-<img src="https://img.shields.io/badge/Power_BI-0d1117?style=flat-square&logo=powerbi&logoColor=F2C811" alt="Power BI"/>
-<img src="https://img.shields.io/badge/Pandas-0d1117?style=flat-square&logo=pandas&logoColor=white" alt="Pandas"/>
-<img src="https://img.shields.io/badge/Jupyter-0d1117?style=flat-square&logo=jupyter&logoColor=F37626" alt="Jupyter"/>
-<img src="https://img.shields.io/badge/Google_Colab-0d1117?style=flat-square&logo=googlecolab&logoColor=F9AB00" alt="Google Colab"/>
+<img src="https://skillicons.dev/icons?i=r,mysql,postgres,jupyter&theme=dark" alt="R, SQL, PostgreSQL, Jupyter"/>
+<img src="./assets/icons/pandas.svg" height="48" alt="Pandas"/>
+<img src="./assets/icons/powerbi.svg" height="48" alt="Power BI"/>
+<img src="./assets/icons/colab.svg" height="48" alt="Google Colab"/>
 
 **⚙️ Automação & ☁️ Cloud**<br>
-<img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/><br>
-<img src="https://img.shields.io/badge/n8n-0d1117?style=flat-square&logo=n8n&logoColor=EA4B71" alt="n8n"/>
+<img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
+<img src="./assets/icons/n8n.svg" height="48" alt="n8n"/>
 <img src="https://img.shields.io/badge/BotConversa-0d1117?style=flat-square&logo=whatsapp&logoColor=25D366" alt="BotConversa"/>
 
 **🎨 Front-end & 🔌 Ferramentas**<br>
