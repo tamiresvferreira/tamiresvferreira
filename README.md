@@ -28,23 +28,24 @@ Também me importo com a parte que fica entre o código e as pessoas: documenta�
 
 ## ⚡ Tech stack
 
-**🧠 IA & Machine Learning**<br>
+**🧠 Machine Learning & Visão Computacional**<br>
 <img src="https://skillicons.dev/icons?i=py,sklearn,tensorflow,opencv&theme=dark" alt="Python, Scikit-learn, TensorFlow, OpenCV"/>
 
 **📊 Dados**<br>
-<img src="https://skillicons.dev/icons?i=r,mysql,postgres,jupyter&theme=dark" alt="R, SQL, PostgreSQL, Jupyter"/>
+<img src="https://skillicons.dev/icons?i=r,mysql,postgres&theme=dark" alt="R, SQL, PostgreSQL"/>
 <img src="./assets/icons/pandas.svg" height="48" alt="Pandas"/>
 <img src="./assets/icons/powerbi.svg" height="48" alt="Power BI"/>
 <img src="./assets/icons/colab.svg" height="48" alt="Google Colab"/>
 
-**⚙️ Automação & ☁️ Cloud**<br>
-<img src="https://skillicons.dev/icons?i=aws&theme=dark" alt="AWS"/>
+**⚙️ Automação**<br>
 <img src="./assets/icons/n8n.svg" height="48" alt="n8n"/>
-<img src="https://img.shields.io/badge/BotConversa-0d1117?style=flat-square&logo=whatsapp&logoColor=25D366" alt="BotConversa"/>
+<img src="./assets/icons/botconversa.svg" height="48" alt="BotConversa"/>
 
-**🎨 Front-end & 🔌 Ferramentas**<br>
-<img src="https://skillicons.dev/icons?i=figma,react,js,html,css&theme=dark" alt="Figma, React, JavaScript, HTML, CSS"/><br>
-<img src="https://skillicons.dev/icons?i=arduino,git,github,vscode&theme=dark" alt="Arduino, Git, GitHub, VS Code"/>
+**🧩 Prototipagem (interface e hardware)**<br>
+<img src="https://skillicons.dev/icons?i=figma,react,js,html,css,arduino&perline=5&theme=dark" alt="Figma, React, JavaScript, HTML, CSS, Arduino"/>
+
+**🛠️ Desenvolvimento & Deploy**<br>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,aws&theme=dark" alt="Git, GitHub, VS Code, AWS"/>
 
 </td>
 </tr>
