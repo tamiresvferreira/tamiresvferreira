@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="Contribuições por mês no último ano: 91">
+<rect x="0.5" y="0.5" width="899" height="259" rx="8" fill="#0d1117" stroke="#30363d"/>
+<text x="50" y="36" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#ff5fa2">Atividade no GitHub</text>
+<text x="875" y="36" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="13" fill="#8b949e" text-anchor="end">91 contribuições nos últimos 12 meses</text>
+<line x1="50" y1="220.0" x2="875" y2="220.0" stroke="#30363d" stroke-dasharray="3 4"/>
+<text x="40" y="224.0" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e" text-anchor="end">0</text>
+<line x1="50" y1="141.0" x2="875" y2="141.0" stroke="#30363d" stroke-dasharray="3 4"/>
+<text x="40" y="145.0" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e" text-anchor="end">18</text>
+<line x1="50" y1="62.0" x2="875" y2="62.0" stroke="#30363d" stroke-dasharray="3 4"/>
+<text x="40" y="66.0" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e" text-anchor="end">37</text>
+<rect x="65.1" y="218.0" width="38.5" height="2" rx="1" fill="#30363d"/>
+<text x="84.4" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">dez 25</text>
+<rect x="133.9" y="218.0" width="38.5" height="2" rx="1" fill="#30363d"/>
+<text x="153.1" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">jan 26</text>
+<rect x="202.6" y="218.0" width="38.5" height="2" rx="1" fill="#30363d"/>
+<text x="221.9" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">fev</text>
+<rect x="271.4" y="211.5" width="38.5" height="8.5" rx="4" fill="#ff5fa2"><title>mar/2026: 2</title></rect>
+<text x="290.6" y="205.5" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">2</text>
+<text x="290.6" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">mar</text>
+<rect x="340.1" y="218.0" width="38.5" height="2" rx="1" fill="#30363d"/>
+<text x="359.4" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">abr</text>
+<rect x="408.9" y="207.2" width="38.5" height="12.8" rx="4" fill="#ff5fa2"><title>mai/2026: 3</title></rect>
+<text x="428.1" y="201.2" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">3</text>
+<text x="428.1" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">mai</text>
+<rect x="477.6" y="181.6" width="38.5" height="38.4" rx="4" fill="#ff5fa2"><title>jun/2026: 9</title></rect>
+<text x="496.9" y="175.6" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">9</text>
+<text x="496.9" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">jun</text>
+<rect x="546.4" y="218.0" width="38.5" height="2" rx="1" fill="#30363d"/>
+<text x="565.6" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">jul</text>
+<rect x="615.1" y="215.7" width="38.5" height="4.3" rx="4" fill="#ff5fa2"><title>ago/2026: 1</title></rect>
+<text x="634.4" y="209.7" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">1</text>
+<text x="634.4" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">ago</text>
+<rect x="683.9" y="70.5" width="38.5" height="149.5" rx="4" fill="#ff5fa2"><title>set/2026: 35</title></rect>
+<text x="703.1" y="64.5" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">35</text>
+<text x="703.1" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">set</text>
+<rect x="752.6" y="202.9" width="38.5" height="17.1" rx="4" fill="#ff5fa2"><title>out/2026: 4</title></rect>
+<text x="771.9" y="196.9" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">4</text>
+<text x="771.9" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">out</text>
+<rect x="821.4" y="62.0" width="38.5" height="158.0" rx="4" fill="#ff5fa2"><title>nov/2026: 37</title></rect>
+<text x="840.6" y="56.0" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="11" fill="#ffc2e0" text-anchor="middle">37</text>
+<text x="840.6" y="244" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">nov</text>
+</svg>
